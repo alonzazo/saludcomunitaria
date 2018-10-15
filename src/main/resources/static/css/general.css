@@ -1,0 +1,113 @@
+:root {
+    --default-font: 'Noto Sans JP', sans-serif;
+    --alternative-font: 'PT Sans', sans-serif;
+    --title-font: 'Fredoka One', cursive;
+}
+
+body {
+    font-family: var(--default-font);
+}
+
+main {
+    margin-top: -168px;
+    padding-top: 168px;
+}
+
+.header-box {
+    display: flex;
+    margin-left: 20%;
+    margin-top: 2em;
+}
+.nav {
+    display: flex;
+    margin-top: 15px;
+    height: fit-content;
+    position: center;
+    background: #EEEEEE;
+    border-radius: 15em;
+    opacity: 0.8;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.nav-option {
+    margin: 5px;
+    border-radius: 16px;
+    width: fit-content;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #BBBBBB;
+    cursor: pointer;
+    font-size: smaller;
+    transition: background-color ease 1s, opacity ease 1s, color ease 1s;
+    opacity: 0.4;
+}
+
+.nav-option-selected {
+    opacity: 1;
+    background: #444444;
+    color: white;
+}
+
+.nav-option:hover {
+    font-weight: bold;
+    background-color: #AAAAAA;
+    opacity: 0.5;
+}
+
+.nav-option-selected:hover {
+    background-color: #222222;
+    opacity: 1!important;
+}
+
+#nav-logo {
+    height: 85%;
+
+}
+
+.main {
+    height: calc(95vh - 100px);
+    width: 100%;
+}
+
+.footer {
+    background-color: lightgrey;
+    height: 160px;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    width: -webkit-fill-available;
+}
+
+.footer-box {
+}
+
+.additional-info {
+    display: flex;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#info-left-footer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#info-right-footer {
+    flex: 1;
+    text-align: right;
+}
+.copyright {
+    position: relative;
+    bottom: 0;
+    background: #222222;
+    color: #FFF;
+    height: 5em;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+}
