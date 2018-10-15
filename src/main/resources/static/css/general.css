@@ -1,16 +1,13 @@
 :root {
-    --default-font: 'Noto Sans JP', sans-serif;
-    --alternative-font: 'PT Sans', sans-serif;
+    --default-font: 'Roboto', sans-serif;
+    --alternative-font: 'Helvetica', sans-serif;
     --title-font: 'Fredoka One', cursive;
 }
 
-body {
-    font-family: var(--default-font);
-}
-
-main {
-    margin-top: -168px;
-    padding-top: 168px;
+html, body {
+    font-family: var(--default-font), var(--alternative-font), sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .header-box {

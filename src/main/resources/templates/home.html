@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drake - Centro de Datos UCR</title>
     <!--STYLES-->
-    <link rel="stylesheet" type="text/css" th:href="@{../../css/general.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" th:href="@{../../css/material.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/general.css}">
     <link rel="stylesheet" type="text/css" th:href="@{../../css/home.css}">
     <!--<link href="https://fonts.googleapis.com/css?family=PT+Sans|Fredoka+One|Noto+Sans+JP" rel="stylesheet"/>-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--SCRIPTS-->
     <script type="text/javascript" th:src="@{../../js/general.js}"></script>
     <script type="text/javascript" th:src="@{../../js/three.min.js}"></script>
@@ -31,28 +32,31 @@
                 <a href="#contacto" class="mdl-layout__tab">Contacto</a>
             </div>
         </header>
-        <main class="mdl-layout__content">
+        <main class="mdl-layout__content" th:style="'background: url('+@{../../images/backgrounds/diego38.jpeg}+');background-size:cover;'">
             <div id="container"></div>
         </main>
 
         <footer class="mdl-mega-footer">
             <div class="mdl-mega-footer--middle-section">
                 <div class="mdl-mega-footer--drop-down-section">
-                    <ul id="mdl-mega-footer--link-list">
-                        <a href="#">Quiénes somos</a>
-                        <a href="#">Áreas de conocimiento</a>
-                        <a href="#">Datos</a>
-                        <a href="#">Proyectos</a>
-                        <a href="#">Contacto</a>
+                    <h1 class="mdl-mega-footer--heading">Navegación</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">Áreas de conocimiento</a></li>
+                        <li><a href="#">Datos</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Contacto</a></li>
                     </ul>
                 </div>
 
-                <div id="mdl-mega-footer-drop-down-section">
+                <div class="mdl-mega-footer-drop-down-section">
                     <img height="120px" th:src="@{../../images/firma-horizontal-dos-lineas-reverso-rgb.png}" alt=""/>
                 </div>
             </div>
             <div class="mdl-mega-footer--bottom-section">
-                <div class="mdl-mega-footer--link-list">Desarrollado por Oscar Azofeifa  2018 Universidad de Costa Rica</div>
+                <ul class="mdl-mega-footer__link-list">
+                    <li>Desarrollado por Oscar Azofeifa 2018 | Universidad de Costa Rica</li>
+                </ul>
             </div>
 
         </footer>
