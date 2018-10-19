@@ -21,13 +21,16 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <section class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary" layout:fragment="header">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            <img id="nav-logo" alt="Logo Centro de Datos Drake" th:src="@{../../images/logotipo-mandarina-dark.svg}"/>
+            <a href="/" id="nav-logo">
+                <img height="100%" alt="Logo Centro de Datos Drake" th:src="@{../../images/logotipo-mandarina-dark.svg}"/>
+            </a>
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-            <a href="#inicio" class="mdl-layout__tab is-active">Inicio</a>
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'inicio')} ? is-active"
+               href="/inicio" class="mdl-layout__tab" >Inicio</a>
             <a href="#quienessomos" class="mdl-layout__tab">Quiénes somos</a>
             <a href="#areasconocimiento" class="mdl-layout__tab">Áreas de conocimiento</a>
-            <a href="#datos" class="mdl-layout__tab">Datos</a>
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'datos')} ? is-active" href="/datos" class="mdl-layout__tab">Datos</a>
             <a href="#proyectos" class="mdl-layout__tab">Proyectos</a>
             <a href="#contacto" class="mdl-layout__tab">Contacto</a>
         </div>

@@ -7,7 +7,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = {"/home","/"})
+    @RequestMapping(value = "/")
+    public String getRoot(){
+        return "redirect:inicio";
+    }
+
+    @RequestMapping(value = "/inicio")
     public ModelAndView getHome(ModelAndView modelAndView){
         modelAndView.setViewName("home");
         return modelAndView;
