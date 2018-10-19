@@ -27,7 +27,7 @@ ready(function () {
 
 // Create a WebGL renderer, camera
 // and a scene
-        const renderer = new THREE.WebGLRenderer({alpha:true});
+        const renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
         const camera =
             new THREE.PerspectiveCamera(
                 VIEW_ANGLE,
@@ -56,6 +56,17 @@ ready(function () {
         //Defines the tetrahedron properties
         const radius = 82.0;
         const details = 0;
+
+        //Just for testing
+        var customGeo = new THREE.Geometry();
+        customGeo.vertices = [
+            new THREE.Vector3(0,0,0),
+            new THREE.Vector3(0,100,0),
+            new THREE.Vector3(0,0,100)
+        ];
+        customGeo.faces.push(new THREE.Face3(0,1,2));
+        customGeo.computeBoundingSphere();
+
 // Create a new mesh with
 // sphere geometry - we will cover
 // the sphereMaterial next!
@@ -67,6 +78,8 @@ ready(function () {
 
             sphereMaterial);
 
+        /*const sphere = new THREE.Mesh(customGeo,
+            sphereMaterial);*/
 // Move the Sphere back in Z so we
 // can see it.
         sphere.position.z = -300;

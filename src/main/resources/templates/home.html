@@ -1,64 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drake - Centro de Datos UCR</title>
+    <th:block th:replace="fragments/template :: header-data('Inicio')"></th:block>
     <!--STYLES-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" th:href="@{../../css/material.min.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{../../css/general.css}">
     <link rel="stylesheet" type="text/css" th:href="@{../../css/home.css}">
     <!--<link href="https://fonts.googleapis.com/css?family=PT+Sans|Fredoka+One|Noto+Sans+JP" rel="stylesheet"/>-->
     <!--SCRIPTS-->
-    <script type="text/javascript" th:src="@{../../js/general.js}"></script>
     <script type="text/javascript" th:src="@{../../js/three.min.js}"></script>
     <script type="text/javascript" th:src="@{../../js/home.js}"></script>
-    <script th:src="@{../../js/material.min.js}"></script>
 </head>
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-                <img id="nav-logo" alt="Logo Centro de Datos Drake" th:src="@{../../images/logotipo-mandarina-dark.svg}"/>
-            </div>
-            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-                <a href="#quienessomos" class="mdl-layout__tab is-active">Quiénes somos</a>
-                <a href="#areasconocimiento" class="mdl-layout__tab">Áreas de conocimiento</a>
-                <a href="#datos" class="mdl-layout__tab">Datos</a>
-                <a href="#proyectos" class="mdl-layout__tab">Proyectos</a>
-                <a href="#contacto" class="mdl-layout__tab">Contacto</a>
-            </div>
-        </header>
+        <header layout:replace="fragments/template :: header"></header>
         <main class="mdl-layout__content" th:style="'background: url('+@{../../images/backgrounds/diego38.jpeg}+');background-size:cover;'">
             <div id="container"></div>
         </main>
 
-        <footer class="mdl-mega-footer">
-            <div class="mdl-mega-footer--middle-section">
-                <div class="mdl-mega-footer--drop-down-section">
-                    <h1 class="mdl-mega-footer--heading">Navegación</h1>
-                    <ul class="mdl-mega-footer__link-list">
-                        <li><a href="#">Quiénes somos</a></li>
-                        <li><a href="#">Áreas de conocimiento</a></li>
-                        <li><a href="#">Datos</a></li>
-                        <li><a href="#">Proyectos</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </div>
-
-                <div class="mdl-mega-footer-drop-down-section">
-                    <img height="120px" th:src="@{../../images/firma-horizontal-dos-lineas-reverso-rgb.png}" alt=""/>
-                </div>
-            </div>
-            <div class="mdl-mega-footer--bottom-section">
-                <ul class="mdl-mega-footer__link-list">
-                    <li>Desarrollado por Oscar Azofeifa 2018 | Universidad de Costa Rica</li>
-                </ul>
-            </div>
-
+        <footer layout:replace="fragments/template :: footer">
         </footer>
     </div>
 
