@@ -4,3 +4,15 @@
     width: fit-content;
     z-index: 10;
 }
+
+.popup-map {
+    color: lightgray;
+}
+
+.mapboxgl-popup-content {
+    background: #252525!important;
+}
+
+.mapboxgl-popup-tip {
+    border-top-color: #252525!important;
+}

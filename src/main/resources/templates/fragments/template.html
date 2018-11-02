@@ -29,10 +29,13 @@
             <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'inicio')} ? is-active"
                href="/inicio" class="mdl-layout__tab" >Inicio</a>
             <a href="#quienessomos" class="mdl-layout__tab">Quiénes somos</a>
+            <a href="#info" class="mdl-layout__tab">Información</a>
             <a href="#areasconocimiento" class="mdl-layout__tab">Áreas de conocimiento</a>
             <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'datos')} ? is-active" href="/datos" class="mdl-layout__tab">Datos</a>
             <a href="#proyectos" class="mdl-layout__tab">Proyectos</a>
+            <a href="#blog" class="mdl-layout__tab">Blog</a>
             <a href="#contacto" class="mdl-layout__tab">Contacto</a>
+            <!--Reducir categorías-->
         </div>
     </section>
     <main class="mdl-layout__content" th:style="'background: url('+@{../../images/backgrounds/diego38.jpeg}+');background-size:cover;'">
@@ -44,15 +47,22 @@
                 <h1 class="mdl-mega-footer--heading">Navegación</h1>
                 <ul class="mdl-mega-footer__link-list">
                     <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Información</a></li>
                     <li><a href="#">Áreas de conocimiento</a></li>
                     <li><a href="#">Datos</a></li>
                     <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Blog</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
             <div class="mdl-mega-footer--drop-down-section">
                 <h1 class="mdl-mega-footer--heading"></h1>
                 <img style="border-radius: 50%; padding: 30px; border-radius: 50%; max-height: 130px;" th:src="@{../../images/escudo-tcu.jpg}" alt=""/>
+            </div>
+
+            <div class="mdl-mega-footer--drop-down-section">
+                <h1 class="mdl-mega-footer--heading"></h1>
+                <img style="margin-top: 25px;max-height: 100px;" th:src="@{../../images/EES-escuela-estadistica-horizontal-01.png}" alt=""/>
             </div>
             <div class="mdl-mega-footer--drop-down-section">
                 <h1 class="mdl-mega-footer--heading"></h1>
