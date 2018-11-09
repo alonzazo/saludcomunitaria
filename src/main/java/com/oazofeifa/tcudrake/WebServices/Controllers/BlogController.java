@@ -23,7 +23,7 @@ public class BlogController {
 
     @RequestMapping(value = "/blogs")
     public ModelAndView getBlogMainPage(ModelAndView mv){
-        List<BlogEntry> blogEntries = blogEntriesService.findAll();
+        List<BlogEntry> blogEntries = blogEntriesService.findAllByOrderByEntryIdDesc(); //Cambiar por
 
         mv.setViewName("blog");
         mv.addObject("blogEntries", blogEntries);
@@ -44,7 +44,7 @@ public class BlogController {
 
         //Agregamos el entry
         mv.addObject(blogEntry);
-        mv.addObject(authorName);
+        mv.addObject("authorName",authorName);
         mv.setViewName("blog-entry");
         return mv;
     }

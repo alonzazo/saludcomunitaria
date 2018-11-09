@@ -24,7 +24,7 @@
                 <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
                     <div class="minilogo"></div>
                     <div>
-                        <strong th:text="${authorName}"></strong>
+                        <strong><th:block th:text="${authorName}"></th:block></strong>
                         <span>2 days ago</span>
                     </div>
                     <div class="section-spacer"></div>
@@ -41,7 +41,10 @@
                         <span class="visuallyhidden">share</span>
                     </div>
                 </div>
-                <div class="mdl-color-text--grey-700 mdl-card__supporting-text" th:text="${blogEntry.getContentEntry()}">
+                <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+                <th:block  th:each="paragraph : ${blogEntry.getContentEntry().split('\n')}">
+                    <p th:text="${paragraph}"></p>
+                </th:block>
                 </div>
                 <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
                     <form>

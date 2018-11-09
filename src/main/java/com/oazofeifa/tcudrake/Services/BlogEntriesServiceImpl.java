@@ -21,6 +21,12 @@ public class BlogEntriesServiceImpl implements BlogEntriesService {
         return list;
     }
 
+    public List<BlogEntry> findAllByOrderByEntryIdDesc(){
+        List<BlogEntry> list = new ArrayList<>();
+        blogEntryDAO.findAllByOrderByEntryIdDesc().iterator().forEachRemaining(list::add);
+        return list;
+    }
+
     @Override
     public BlogEntry findById(Integer id) {
         return blogEntryDAO.findById(id).get();
