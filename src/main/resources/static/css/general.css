@@ -108,3 +108,7 @@ html, body {
     padding-right: 20%;
     text-align: center;
 }
+
+.mt-10 {
+    margin-top: -10em;
+}

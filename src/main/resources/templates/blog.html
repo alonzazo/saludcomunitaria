@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <th:block th:replace="fragments/template :: header-data('Blog')"></th:block>
+    <!--STYLES-->
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/blog.css}">
+    <!--<link href="https://fonts.googleapis.com/css?family=PT+Sans|Fredoka+One|Noto+Sans+JP" rel="stylesheet"/>-->
+    <!--SCRIPTS-->
+    <script type="text/javascript" th:src="@{../../js/blog.js}"></script>
+</head>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header layout:replace="fragments/template :: header"></header>
+    <main class="mdl-layout__content">
+        <div th:style="'background: url('+@{../../images/backgrounds/daniel25.jpeg}+');background-size: cover; background-position-y: -300px; background-attachment: fixed; z-index: -2; height: calc(20em + 168px); margin-top: -168px;'"></div>
+        <div class="mdl-layout__tab-panel is-active mt-10" id="overview">
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                    <i class="material-icons">play_circle_filled</i>
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Features</h4>
+                        Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a href="#" class="mdl-button">Read our features</a>
+                    </div>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1" data-upgraded=",MaterialButton,MaterialRipple">
+                    <i class="material-icons">more_vert</i>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(19px, 17px);"></span></span>
+                </button>
+                <div class="mdl-menu__container is-upgraded">
+                    <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1" data-upgraded=",MaterialMenu">
+                        <li class="mdl-menu__item" tabindex="-1">Lorem</li>
+                        <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+                        <li class="mdl-menu__item" tabindex="-1">Dolor</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                    <i class="material-icons">play_circle_filled</i>
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Features</h4>
+                        Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a href="#" class="mdl-button">Read our features</a>
+                    </div>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1" data-upgraded=",MaterialButton,MaterialRipple">
+                    <i class="material-icons">more_vert</i>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(19px, 17px);"></span></span>
+                </button>
+                <div class="mdl-menu__container is-upgraded">
+                    <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1" data-upgraded=",MaterialMenu">
+                        <li class="mdl-menu__item" tabindex="-1">Lorem</li>
+                        <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+                        <li class="mdl-menu__item" tabindex="-1">Dolor</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                    <i class="material-icons">play_circle_filled</i>
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Features</h4>
+                        Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a href="#" class="mdl-button">Read our features</a>
+                    </div>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1" data-upgraded=",MaterialButton,MaterialRipple">
+                    <i class="material-icons">more_vert</i>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(19px, 17px);"></span></span>
+                </button>
+                <div class="mdl-menu__container is-upgraded">
+                    <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1" data-upgraded=",MaterialMenu">
+                        <li class="mdl-menu__item" tabindex="-1">Lorem</li>
+                        <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+                        <li class="mdl-menu__item" tabindex="-1">Dolor</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                    <i class="material-icons">play_circle_filled</i>
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Features</h4>
+                        Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a href="#" class="mdl-button">Read our features</a>
+                    </div>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1" data-upgraded=",MaterialButton,MaterialRipple">
+                    <i class="material-icons">more_vert</i>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(19px, 17px);"></span></span>
+                </button>
+                <div class="mdl-menu__container is-upgraded">
+                    <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1" data-upgraded=",MaterialMenu">
+                        <li class="mdl-menu__item" tabindex="-1">Lorem</li>
+                        <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+                        <li class="mdl-menu__item" tabindex="-1">Dolor</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer layout:replace="fragments/template :: footer">
+    </footer>
+</div>
+
+</body>
+</html>

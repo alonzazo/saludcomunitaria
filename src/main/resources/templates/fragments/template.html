@@ -33,7 +33,7 @@
             <a href="#areasconocimiento" class="mdl-layout__tab">Áreas de conocimiento</a>
             <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'datos')} ? is-active" href="/datos" class="mdl-layout__tab">Datos</a>
             <a href="#proyectos" class="mdl-layout__tab">Proyectos</a>
-            <a href="#blog" class="mdl-layout__tab">Blog</a>
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'blogs')} ? is-active" href="/blogs" class="mdl-layout__tab">Blog</a>
             <a href="#contacto" class="mdl-layout__tab">Contacto</a>
             <!--Reducir categorías-->
         </div>
