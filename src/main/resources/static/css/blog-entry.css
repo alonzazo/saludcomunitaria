@@ -194,7 +194,6 @@ body::before {
     background-color: transparent;
 }
 .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media {
-    background-image: url('../../images/backgrounds/daniel25.jpeg');
     height: 280px;
 }
 .demo-blog--blogpost .comments {
