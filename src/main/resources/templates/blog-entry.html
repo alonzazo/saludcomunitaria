@@ -23,9 +23,9 @@
                 </div>
                 <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
                     <div class="minilogo"></div>
-                    <div>
+                    <div style="align-items: normal;">
                         <strong><th:block th:text="${authorName}"></th:block></strong>
-                        <span>2 days ago</span>
+                        <span th:text="${blogEntry.getBroadcastingDate().toString()}"></span>
                     </div>
                     <div class="section-spacer"></div>
                     <div class="meta__favorites">

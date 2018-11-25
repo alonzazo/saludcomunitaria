@@ -62,7 +62,7 @@ html, body {
 
 #nav-logo {
     height: 85%;
-
+    flex: 1;
 }
 
 .main {
@@ -111,4 +111,87 @@ html, body {
 
 .mt-10 {
     margin-top: -10em;
+}
+
+#profile-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 16px;
+}
+
+.profile-button__non-logged {
+    border-radius: 50px;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.mdl-menu__container {
+    margin-right: 56px;
+}
+
+
+/*Menu static-item styles*/
+
+.mdl-menu__static-item {
+    display: block;
+    border: none;
+    color: rgba(0, 0, 0, .87); /*default-item-text-color;*/
+    background-color: transparent;
+    text-align: left;
+    margin: 0;
+    padding: 0 16px;
+    outline-color: #bdbdbd; /*$default-item-outline-color;*/
+    position: relative;
+    overflow: hidden;
+/*@include typo-body-1();*/
+    text-decoration: none;
+    cursor: pointer;
+    min-height: 48px;
+    line-height: 48px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
+    user-select: none;
+}
+    .mdl-menu__container.is-visible .mdl-menu__static-item {
+        opacity: 1;
+    }
+
+.mdl-menu__static-item::-moz-focus-inner {
+     border: 0;
+ }
+
+.mdl-menu__static-item--full-bleed-divider {
+     border-bottom: 1px solid rgba(0,0,0,.12);
+ }
+
+.mdl-menu__static-item[disabled], .mdl-menu__static-item[data-mdl-disabled] {
+    color: #bdbdbd; /*$disabled-item-text-color;*/
+    background-color: transparent;
+    cursor: auto;
+}
+.mdl-menu__static-item[disabled]:hover, .mdl-menu__static-item[data-mdl-disabled]:hover {
+     background-color: transparent;
+ }
+
+.mdl-menu__static-item[disabled]:focus, .mdl-menu__static-item[data-mdl-disabled]:focus {
+     background-color: transparent;
+ }
+
+.mdl-menu__static-item[disabled], .mdl-menu__static-item[data-mdl-disabled] .mdl-ripple {
+      background: transparent;
+  }
+
+.mdl-menu__item--ripple-container {
+    display: block;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
 }

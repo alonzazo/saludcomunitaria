@@ -22,7 +22,10 @@
                 </header>
                 <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
                     <div class="mdl-card__supporting-text">
-                        <h4 th:text="${iterator.getTitleEntry()}"></h4>
+                        <h4 style="margin-bottom: 0px">
+                            <th:block th:text="${iterator.getTitleEntry()}"></th:block>
+                        </h4>
+                        <h5 style="font-size: small; margin-top: 0; color: lightgrey;" th:text="${iterator.getBroadcastingDate().toString()}"></h5>
                         <th:block th:text="${iterator.getAbstractEntry()}"></th:block>
                     </div>
                     <div class="mdl-card__actions">
