@@ -2,7 +2,8 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <th:block th:replace="fragments/template :: header-data('Blog')"></th:block>
     <!--STYLES-->
@@ -15,7 +16,8 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header layout:replace="fragments/template :: header"></header>
     <main class="mdl-layout__content">
-        <div th:style="'background: url('+@{../../images/backgrounds/daniel25.jpeg}+');background-size: cover; background-position-y: -300px; background-attachment: fixed; z-index: -2; height: calc(20em + 168px); margin-top: -168px;'"></div>
+        <div th:style="'background: url('+@{../../images/backgrounds/daniel25.jpeg}+');background-size: cover; background-position-y: -300px; background-attachment: fixed; z-index: -2; height: calc(20em + 168px); margin-top: -168px;'">
+        </div>
         <div class="mdl-layout__tab-panel is-active mt-10" id="overview" th:if="${blogEntries != null}">
             <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" th:each="iterator : ${blogEntries}">
                 <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white" th:style="'background-image: url(../../' + ${iterator.getImageUrl()} + ');'">
@@ -45,6 +47,13 @@
                     </ul>
                 </div>
             </section>
+            <!-- Adding button -->
+            <a href="/blogs/nueva-entrada"><button id="add-blog-button" sec:authorize="hasAuthority('admin') || hasAuthority('student')" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">add</i>
+            </button></a>
+            <div class="mdl-tooltip" data-mdl-for="add-blog-button">
+                Agregar entrada de blog
+            </div>
         </div>
     </main>
     <footer layout:replace="fragments/template :: footer">

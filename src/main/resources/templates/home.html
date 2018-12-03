@@ -15,8 +15,33 @@
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header layout:replace="fragments/template :: header"></header>
-        <main class="mdl-layout__content" th:style="'background: url('+@{../../images/backgrounds/diego38.jpeg}+');background-size:cover;'">
-            <div id="container" style="height: 80vh;"></div>
+        <main class="mdl-layout__content">
+            <!--<div id="container" style="height: 80vh;"></div>-->
+            <div class="saludcomunitaria-be-together-section">
+                <div class="logo-font saludcomunitaria-slogan">Investigación y acción social</div>
+                <div class="logo-font saludcomunitaria-sub-slogan">Salud Comunitaria en Costa Rica</div>
+
+                <a href="#screens">
+                    <button class="saludcomunitaria-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                        <i class="material-icons">expand_more</i>
+                        <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 160.392px; height: 160.392px; transform: translate(-50%, -50%) translate(32px, 44px);"></span></span></button>
+                </a>
+            </div>
+            <div class="saludcomunitaria-wear-section">
+                <div class="saludcomunitaria-wear-band">
+                    <div class="saludcomunitaria-wear-band-text">
+                        <div class="mdl-typography--display-2 mdl-typography--font-thin">Bahía Drake, colaboramos en su desarrollo</div>
+                        <p class="mdl-typography--headline mdl-typography--font-thin">
+                            Viajamos alrededor de 3 veces por año al distrito de Bahía Drake, un lugar paradisiaco con gran potencial turístico. Usamos la fuerza de la investigación para colaborarles en su desarrollo.
+                        </p>
+                        <p>
+                            <a class="mdl-typography--font-regular mdl-typography--text-uppercase saludcomunitaria-alt-link" href="">
+                                See what's new in the Play Store&nbsp;<i class="material-icons">chevron_right</i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer layout:replace="fragments/template :: footer">
         </footer>

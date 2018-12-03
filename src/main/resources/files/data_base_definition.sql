@@ -96,5 +96,7 @@ insert into blog_entry values (4,
                                true,
                                'images/backgrounds/diego27.jpeg');
 
+insert into user value ('oscar.azofeifa.segura@gmail.com','Azofeifa','Oscar',)
+
 
 

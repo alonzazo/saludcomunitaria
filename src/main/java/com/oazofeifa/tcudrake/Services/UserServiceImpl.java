@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +19,9 @@ public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
     private SessionFactory sessionFactory;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public List<User> findAll() {
@@ -39,6 +43,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(User user) {
+        return userDAO.save(user);
+    }
+
+    public User create(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userDAO.save(user);
     }
 

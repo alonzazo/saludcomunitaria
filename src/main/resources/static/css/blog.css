@@ -206,3 +206,20 @@
 .mdl-demo .mdl-menu__container {
     z-index: 99;
 }
+
+#add-blog-button {
+    margin: 20px;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    height: 90px;
+    width: 90px;
+    z-index: 1;
+}
+
+@media(min-width: 1024px) {
+    #add-blog-button {
+        bottom: 4rem;
+        right: 3rem;
+    }
+}

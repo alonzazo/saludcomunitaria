@@ -21,7 +21,7 @@
     <bean id="templateEngine" class="org.thymeleaf.TemplateEngine">
         <property name="additionalDialects">
             <set>
-                <bean class="org.thymeleaf.extras.java8time.dialect.Java8TimeDialect" />
+                <bean class="org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect" />
                 <bean class="nz.net.ultraq.thymeleaf.LayoutDialect"/>
             </set>
         </property>

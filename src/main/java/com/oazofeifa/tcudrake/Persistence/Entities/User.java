@@ -12,6 +12,7 @@ public class User {
     private String lastname;
     private String name;
     private String password;
+    private Integer roleFk;
 
     @Id
     @Column(name = "email")
@@ -68,5 +69,15 @@ public class User {
     public int hashCode() {
 
         return Objects.hash(email, lastname, name, password);
+    }
+
+    @Basic
+    @Column(name = "role_fk")
+    public Integer getRoleFk() {
+        return roleFk;
+    }
+
+    public void setRoleFk(Integer roleFk) {
+        this.roleFk = roleFk;
     }
 }

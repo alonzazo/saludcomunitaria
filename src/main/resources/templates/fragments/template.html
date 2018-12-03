@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <th:block th:fragment="header-data(titlePage)">
         <meta charset="UTF-8">
@@ -25,41 +25,60 @@
     <section class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary" layout:fragment="header">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
             <div id="nav-logo">
-                <a href="/">
-                    <img height="100%" alt="Logo Centro de Datos Drake" th:src="@{../../images/logotipo-mandarina-dark.svg}"/>
+                <a style="display: flex; flex-direction: column; justify-content: center;" href="http://www.ucr.ac.cr/">
+                    <img style="max-height: 90px;" th:src="@{../../images/firma-horizontal-dos-lineas-reverso-rgb.png}" alt=""/></a>
+                <a style="display: flex; flex-direction: column; justify-content: center; " href="/">
+                    <img style="max-height: 70px;height: max-content;border-left-color: #c5c5c5; border-left-width: 1px; border-left-style: solid; margin-left: 10px; padding-left: 10px;" alt="Logo Centro de Datos Drake" th:src="@{../../images/logotipo-mandarina-dark.svg}"/>
                 </a>
             </div>
             <div id="profile-box">
-                <button id="login-menu-lower-right" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    Ingresá
-                </button>
+                <th:block sec:authorize="isAnonymous()">
+                    <button id="login-menu-lower-right" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Ingresá
+                    </button>
 
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-menu mdl-js-ripple-effect mdl-js-menu login-menu"
-                    for="login-menu-lower-right">
-                    <!--<li class="mdl-menu__static-item">Ingresá</li>
-                    <li class="mdl-menu__item">Item dinamico</li>-->
-                    <li class="mdl-menu__static-item" style="line-height: unset;">
-                        <form action="#" style="display: flex; flex-direction: column;">
-                            <div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding: 20px 0px!important;">
-                                    <input class="mdl-textfield__input" type="text" id="email">
-                                    <label class="mdl-textfield__label" for="email">Correo electrónico</label>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-menu mdl-js-ripple-effect mdl-js-menu login-menu"
+                        for="login-menu-lower-right">
+                        <!--<li class="mdl-menu__static-item">Ingresá</li>
+                        <li class="mdl-menu__item">Item dinamico</li>-->
+                        <li class="mdl-menu__static-item" style="line-height: unset;">
+                            <form th:action="@{/login}" method="POST" style="display: flex; flex-direction: column;">
+                                <div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding: 20px 0px!important;">
+                                        <input class="mdl-textfield__input" type="text" id="email" name="email">
+                                        <label class="mdl-textfield__label" for="email">Correo electrónico</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding: 20px 0px!important;">
+                                        <input class="mdl-textfield__input" type="password" id="password" name="password">
+                                        <label class="mdl-textfield__label" for="password">Contraseña</label>
+                                    </div>
                                 </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding: 20px 0px!important;">
-                                    <input class="mdl-textfield__input" type="password" id="password">
-                                    <label class="mdl-textfield__label" for="password">Contraseña</label>
+                                <div style="text-align: right;">
+                                    <button class="mdl-button mdl-js-button">Crear cuenta...</button>
+                                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Iniciar sesión</button>
                                 </div>
-                            </div>
-                            <div style="text-align: right;">
-                                <button class="mdl-button mdl-js-button">Crear cuenta...</button>
-                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Iniciar sesión</button>
-                            </div>
-                        </form>
-                    </li>
-                    <!--<li class="mdl-menu__item">Another Action</li>
-                    <li disabled class="mdl-menu__item">Disabled Action</li>
-                    <li class="mdl-menu__item">Yet Another Action</li>-->
-                </ul>
+                            </form>
+                        </li>
+                        <!--<li class="mdl-menu__item">Another Action</li>
+                        <li disabled class="mdl-menu__item">Disabled Action</li>
+                        <li class="mdl-menu__item">Yet Another Action</li>-->
+                    </ul>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                    <span id="profile-chip" class="mdl-chip mdl-chip--right-contact">
+                        <span class="mdl-chip__text" th:text="${#authentication.getName().split(',')[1]}"></span>
+                        <span class="mdl-chip__right-contact mdl-color--teal mdl-color-text--white">A</span>
+                    </span>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-menu mdl-js-ripple-effect mdl-js-menu login-menu"
+                        for="profile-chip">
+                        <!--<li class="mdl-menu__static-item">Ingresá</li>
+                        <li class="mdl-menu__item">Item dinamico</li>
+                        <li class="mdl-menu__item">Another Action</li>
+                        <li disabled class="mdl-menu__item">Disabled Action</li>-->
+                        <a href="/logout"><li class="mdl-menu__item">Salir</li></a>
+                    </ul>
+
+                </th:block>
             </div>
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
@@ -68,7 +87,7 @@
             <!--<a href="#info" class="mdl-layout__tab">Información</a>
             <a href="#areasconocimiento" class="mdl-layout__tab">Áreas de conocimiento</a>-->
             <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'datos')} ? is-active" href="/datos" class="mdl-layout__tab">Datos</a>
-            <!--<a href="#proyectos" class="mdl-layout__tab">Proyectos</a>-->
+            <a sec:authorize="isAuthenticated()" href="#proyectos" class="mdl-layout__tab">Proyectos</a>
             <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'blogs')} ? is-active" href="/blogs" class="mdl-layout__tab">Blog</a>
             <!--<a href="#contacto" class="mdl-layout__tab">Contacto</a>-->
             <!--Reducir categorías-->
@@ -82,9 +101,8 @@
             <div class="mdl-mega-footer--drop-down-section">
                 <h1 class="mdl-mega-footer--heading">Navegación</h1>
                 <ul class="mdl-mega-footer__link-list">
-                    <!--<li><a href="#">Quiénes somos</a></li>
-                    <li><a href="#">Información</a></li>
-                    <li><a href="#">Áreas de conocimiento</a></li>-->
+                    <li><a href="/">Inicio</a></li>
+                    <!--<li><a href="#">Áreas de conocimiento</a></li>-->
                     <li><a href="#">Datos</a></li>
                     <!--<li><a href="#">Proyectos</a></li>-->
                     <li><a href="#">Blog</a></li>
@@ -99,10 +117,6 @@
             <div class="mdl-mega-footer--drop-down-section">
                 <h1 class="mdl-mega-footer--heading"></h1>
                 <img style="margin-top: 25px;max-height: 100px;" th:src="@{../../images/EES-escuela-estadistica-horizontal-01.png}" alt=""/>
-            </div>
-            <div class="mdl-mega-footer--drop-down-section">
-                <h1 class="mdl-mega-footer--heading"></h1>
-                <img style="max-height: 150px;" th:src="@{../../images/firma-horizontal-dos-lineas-reverso-rgb.png}" alt=""/>
             </div>
         </div>
         <div class="mdl-mega-footer--bottom-section">
