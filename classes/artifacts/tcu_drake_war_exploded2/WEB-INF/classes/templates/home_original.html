@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Drake - Centro de Datos UCR</title>
+    <!--STYLES-->
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/general.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/home.css}">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Fredoka+One|Noto+Sans+JP" rel="stylesheet"/>
+    <!--SCRIPTS-->
+    <script type="text/javascript" th:src="@{../../js/general.js}"></script>
+    <script type="text/javascript" th:src="@{../../js/three.min.js}"></script>
+    <script type="text/javascript" th:src="@{../../js/home.js}"></script>
+</head>
+<body style="margin: 0px;">
+    <div class="header-box">
+        <img id="nav-logo" alt="Logo Centro de Datos Drake" th:src="@{../../images/logo-cddrake.svg}"/>
+        <div class="nav">
+            <div class="nav-option nav-option-selected">Quiénes somos</div>
+            <div class="nav-option">Áreas de conocimiento</div>
+            <div class="nav-option">Datos</div>
+            <div class="nav-option">Proyectos</div>
+            <div class="nav-option">Contacto</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="container"></div>
+    </div>
+
+
+<div class="footer">
+    <div class="footer-box">
+        <div class="additional-info">
+            <div id="info-left-footer">
+                <a href="#">Quiénes somos</a>
+                <a href="#">Áreas de conocimiento</a>
+                <a href="#">Datos</a>
+                <a href="#">Proyectos</a>
+                <a href="#">Contacto</a>
+            </div>
+            <div id="info-right-footer">
+                <img height="120px" th:src="@{../../images/firma-horizontal-dos-lineas-reverso-rgb.png}" alt=""/>
+            </div>
+
+        </div>
+        <div class="copyright">Desarrollado por Oscar Azofeifa  2018 Universidad de Costa Rica</div>
+    </div>
+
+</div>
+</body>
+</html>
