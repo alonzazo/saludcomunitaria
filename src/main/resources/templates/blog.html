@@ -28,7 +28,9 @@
                             <th:block th:text="${iterator.getTitleEntry()}"></th:block>
                         </h4>
                         <h5 style="font-size: small; margin-top: 0; color: lightgrey;" th:text="${iterator.getBroadcastingDate().toString()}"></h5>
-                        <th:block th:text="${iterator.getAbstractEntry()}"></th:block>
+                        <th:block >
+                            <p th:text="${iterator.getAbstractEntry()}" align="justify"></p>
+                        </th:block>
                     </div>
                     <div class="mdl-card__actions">
                         <a th:href="${'/blogs/' + iterator.getEntryId()}" class="mdl-button">Leer entrada</a>
