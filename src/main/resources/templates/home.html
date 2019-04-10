@@ -20,21 +20,11 @@
             <carrousel-full-screen-section style="margin-top: -168px;">
                 <image-carrousel-element th:each="blogEntry : ${blogEntries}" th:img-src="${'../../' + blogEntry.imageUrl}"
                                          th:title="${blogEntry.titleEntry}"
+                                         th:little-title="${blogEntry.broadcastingDate.toGMTString().substring(0,11)}"
                                          th:href="${'/blogs/' + blogEntry.entryId}" >
                     <p th:text="${blogEntry.abstractEntry}"></p>
                 </image-carrousel-element>
             </carrousel-full-screen-section>
-            <!--<div id="container" style="height: 80vh;"></div>-->
-            <div class="saludcomunitaria-be-together-section">
-                <div class="logo-font saludcomunitaria-slogan">Investigación y acción social</div>
-                <div class="logo-font saludcomunitaria-sub-slogan">Salud Comunitaria en Costa Rica</div>
-
-                <a href="#screens">
-                    <button class="saludcomunitaria-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
-                        <i class="material-icons">expand_more</i>
-                        <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 160.392px; height: 160.392px; transform: translate(-50%, -50%) translate(32px, 44px);"></span></span></button>
-                </a>
-            </div>
             <div class="saludcomunitaria-wear-section">
                 <div class="saludcomunitaria-wear-band">
                     <div class="saludcomunitaria-wear-band-text">

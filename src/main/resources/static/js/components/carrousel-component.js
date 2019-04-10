@@ -36,7 +36,7 @@ class CarrouselFullScreenSection extends HTMLElement {
             #right-control {
                 width: 0px;
                 position: relative;
-                left: -70px;
+                left: -90px;
                 top: 50vh;
             }
 
@@ -138,41 +138,75 @@ class ImageCarrouselElement extends HTMLElement {
             background: rgb(32,32,32);
             background-size: cover;
             height: 100vh;
-            width: 100%;
+            width: 100vw;
+        }
+
+        #titles-container {
+            display: inline-flex;
+            align-items: baseline;
+            margin: 5px 48px 5px 48px; 
+        }
+
+        #title-link {
+            text-decoration: none;
+        }
+
+        #title-link:hover {
+            text-decoration: underline;
+            text-decoration-color: white;
         }
 
         h1 {
             color: white;
-            font-size: xxx-large;
-            margin: 5px 40px 5px 40px;  
+            font-size: xx-large;
+            text-decoration: none; 
+            width: fit-content;
+            text-shadow: 0px 0px 10px rgba(0,0,0,.75);
+        }
+        
+        h2 {
+            font-size: x-small;
+            color: rgba(128,128,128,1);
+            width: fit-content;
+            font-weight: 400;
         }
 
         p {
             color: white;
             font-size: normal;
-            margin: 3px 30% 30px 40px;
+            margin: 3px 30% 30px 48px;
         }
 
-        a {
+        #link {
             color: rgb(64,196,255);
             text-align: right;
-            padding: 20px 40px 20px 40px;
+            padding: 20px 96px 20px 48px;
             border-top-color: rgba(255, 255, 255, 0.25);
             border-top-width: 1px;
             border-top-style: solid;
 
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+
             transition: background-color .5s ease, box-shadow .5s ease;
         }
 
-        a:hover {
-            background-color: rgba(32,32,32,.75);
-            box-shadow: 0px 0px 1px 1px rgba(32,32,32,.75);
+        #link:hover {
+            background-color: rgba(0,0,0,.9);
         }
 
+        #grey-cortain {
+            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.75));
+            width: 100%;
+            height: 25vh;
+            margin-top: -25vh;
+        }
         </style>
+        <div id="grey-cortain"></div>
         <a id = "link">LEER MÁS</a>
         <p id ="paragraph"><slot></slot></p>
-        <h1 id="title"></h1>
+        <div id="titles-container"><a id = "title-link"><h1 id="title"></h1></a><h2 id="little-title"></h2><div>
         `;
 
         root.appendChild(imageTemplate.content.cloneNode(true));
@@ -185,9 +219,14 @@ class ImageCarrouselElement extends HTMLElement {
         const titleElement = this.shadowRoot.querySelector('#title');
         titleElement.innerHTML = this.getAttribute('title');
 
+        const littleTitleElement = this.shadowRoot.querySelector('#little-title');
+        littleTitleElement.innerHTML = this.getAttribute('little-title');
+
         const linkElement = this.shadowRoot.querySelector('#link');
+        const titleLinkElement = this.shadowRoot.querySelector('#title-link');
         let link = this.getAttribute('href');
         linkElement.href = link;
+        titleLinkElement.href = link;
     }
 }
 
