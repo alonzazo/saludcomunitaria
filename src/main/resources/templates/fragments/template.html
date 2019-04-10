@@ -88,7 +88,7 @@
             <a href="#areasconocimiento" class="mdl-layout__tab">Áreas de conocimiento</a>-->
             <!--<a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'datos')} ? is-active" href="/datos" class="mdl-layout__tab">Datos</a>-->
             <a sec:authorize="isAuthenticated()" href="#proyectos" class="mdl-layout__tab">Proyectos</a>
-            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'blogs')} ? is-active" href="/blogs" class="mdl-layout__tab">Blog</a>
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'blogs')} ? is-active" href="/blogs" class="mdl-layout__tab">Blogs</a>
             <!--<a href="#contacto" class="mdl-layout__tab">Contacto</a>-->
             <!--Reducir categorías-->
         </div>
@@ -105,7 +105,7 @@
                     <!--<li><a href="#">Áreas de conocimiento</a></li>-->
                     <!--<li><a href="#">Datos</a></li>-->
                     <!--<li><a href="#">Proyectos</a></li>-->
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Blogs</a></li>
                     <!--<li><a href="#">Contacto</a></li>-->
                 </ul>
             </div>
