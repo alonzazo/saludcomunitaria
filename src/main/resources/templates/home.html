@@ -11,11 +11,19 @@
     <!--SCRIPTS-->
     <script type="text/javascript" th:src="@{../../js/three.min.js}"></script>
     <script type="text/javascript" th:src="@{../../js/home.js}"></script>
+    <script type="module" th:src="@{../../js/components/carrousel-component.js}"></script>
 </head>
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header layout:replace="fragments/template :: header"></header>
         <main class="mdl-layout__content">
+            <carrousel-full-screen-section style="margin-top: -168px;">
+                <image-carrousel-element th:each="blogEntry : ${blogEntries}" th:img-src="${'../../' + blogEntry.imageUrl}"
+                                         th:title="${blogEntry.titleEntry}"
+                                         th:href="${'/blogs/' + blogEntry.entryId}" >
+                    <p th:text="${blogEntry.abstractEntry}"></p>
+                </image-carrousel-element>
+            </carrousel-full-screen-section>
             <!--<div id="container" style="height: 80vh;"></div>-->
             <div class="saludcomunitaria-be-together-section">
                 <div class="logo-font saludcomunitaria-slogan">Investigación y acción social</div>

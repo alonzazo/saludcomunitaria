@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface BlogEntryDAO extends CrudRepository<BlogEntry,Integer> {
     List<BlogEntry> findAllByOrderByEntryIdDesc();
+    List<BlogEntry> findTop5ByOrderByEntryIdDesc();
 }
