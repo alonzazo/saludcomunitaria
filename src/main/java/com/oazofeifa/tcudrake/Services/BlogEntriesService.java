@@ -8,6 +8,7 @@ public interface BlogEntriesService {
 
     List<BlogEntry> findAll();
     List<BlogEntry> findAllByOrderByEntryIdDesc();
+    List<BlogEntry> findTop5NewsByOrderByEntryIdDesc();
     BlogEntry findById(Integer id);
     void delete(Integer id);
     BlogEntry save(BlogEntry blogEntry);
