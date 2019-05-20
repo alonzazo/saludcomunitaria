@@ -162,6 +162,7 @@ class ImageCarrouselElement extends HTMLElement {
             text-decoration: none; 
             width: fit-content;
             text-shadow: 0px 0px 10px rgba(0,0,0,.75);
+            line-height: normal;
         }
         
         h2 {
