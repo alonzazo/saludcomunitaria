@@ -43,12 +43,12 @@ ready(function(){
         }
     })
 
-    const loginButton = document.querySelector('login-box');
+    /*const loginButton = document.querySelector('login-box');
 
     loginButton.on(
         onclick, function (e) {
             var
         }
-    );
+    );*/
 
 });
