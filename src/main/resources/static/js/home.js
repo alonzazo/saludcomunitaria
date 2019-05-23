@@ -8,7 +8,7 @@ function ready(callback) {
 
 ready(function () {
 
-    init();
+    /*init();
 
     function init() {
         // Set the scene size.
@@ -78,8 +78,8 @@ ready(function () {
 
             sphereMaterial);
 
-        /*const sphere = new THREE.Mesh(customGeo,
-            sphereMaterial);*/
+        /!*const sphere = new THREE.Mesh(customGeo,
+            sphereMaterial);*!/
 // Move the Sphere back in Z so we
 // can see it.
         sphere.position.z = -300;
@@ -115,6 +115,12 @@ ready(function () {
 
 // Schedule the first frame.
         requestAnimationFrame(update);
-    }
+    }*/
+    const calendar = document.querySelector('smart-calendar');
+
+    calendar.addEventListener('change', function (event) {
+        document.getElementById('log').innerHTML = event.detail.value.toString();
+    });
+
 
 });

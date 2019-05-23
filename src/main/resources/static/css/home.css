@@ -9,6 +9,190 @@ body {
     margin: 0;
 }
 
+.saludcomunitaria-info-section {
+    background-color: #37474f;
+    display: flex;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    height: 100vh;
+    background-image: url(../../images/backgrounds/educacion_tecnologia2.JPG);
+}
+
+    .saludcomunitaria-info-section .graphic-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 30px 0px 96px 30px;
+    }
+
+    .saludcomunitaria-info-section .info-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        flex-flow: column-reverse;
+        padding: 30px 96px 96px 96px;
+        text-align: justify;
+    }
+
+
+    .saludcomunitaria-info-section h2 {
+        color: lightseagreen;
+    }
+
+    .saludcomunitaria-info-section p {
+        color: white;
+    }
+
+.events-section {
+    background-color: #37474f;
+    color: #fff;
+    padding: 30px 96px 60px 50px;
+}
+
+    .events-section h1 {
+        margin-top: 0px;
+    }
+
+    .events-section .events-content {
+        display: flex;
+    }
+
+        .events-section .calendar-container {
+            flex: 1;
+        }
+
+        .events-section .events-container {
+            flex: 2;
+            border-color: white;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            background-color: #fefefe;
+            color: #5a5a5a;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .events-container .events-header{
+                padding: 10px 30px 10px 30px;
+                border-bottom-color: rgba(0,0,0,0.1);
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                display: flex;
+            }
+                .events-container .events-header span{
+                    text-align: center;
+                    width: fit-content;
+                    margin-left: 7px;
+                }
+
+                .events-container .events-header p{
+                    margin-left: 30px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+
+            .events-container .event-items-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+                .event-items-container .event-item {
+                    padding: 10px 30px 10px 30px;
+                    border-bottom-color: rgba(0,0,0,0.1);
+                    border-bottom-style: solid;
+                    border-bottom-width: 1px;
+                    display: flex;
+                }
+
+                    .event-item .date-time {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        width: fit-content;
+                    }
+
+                        .event-item .date-time .date {
+                            font-size: smaller;
+                        }
+
+                        .event-item .date-time .time {
+                            font-size: large;
+                        }
+
+                    .event-item p {
+                        margin-left: 30px;
+                    }
+
+.interesting-links-section {
+    background-color: #f5f5f5;
+    padding: 30px 96px 30px 50px;
+}
+
+    .interesting-links-section h1 {
+        margin: 0px;
+    }
+
+    .interesting-links-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .interesting-links-container a{
+            color: black;
+            text-decoration: none;
+        }
+
+        .interesting-links-container a:hover {
+             color: black;
+             text-decoration: underline;
+         }
+
+        .link-item {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
+        }
+        .link-item img{
+             margin-bottom: 10px;
+         }
+
+
+.interesting-documents-section {
+    padding: 30px 96px 30px 50px;
+    background-color: #282929;
+    color: white;
+}
+    .interesting-documents-section h1 {
+        margin: 0px;
+    }
+
+    .document-items-container {
+        border: rgba(255,255,255,0.5) solid 1px;
+        border-radius: 4px;
+        width: 100%;
+        padding: 0px;
+    }
+        .document-items-container a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .document-item {
+            padding: 10px 30px 10px 30px;
+            border-bottom: rgba(255,255,255,0.5) solid 1px;
+            background-color: #282929;
+            transition: background-color .5s ease;
+        }
+
+        .document-item:hover{
+            background-color: black;
+        }
 /* Disable ugly boxes around images in IE10 */
 a img{
     border: 0px;

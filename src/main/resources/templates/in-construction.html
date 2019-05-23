@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <th:block th:replace="fragments/template :: header-data('Inicio')"></th:block>
+    <!--STYLES-->
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/in-construction.css}">
+    <!--<link href="https://fonts.googleapis.com/css?family=PT+Sans|Fredoka+One|Noto+Sans+JP" rel="stylesheet"/>-->
+    <!--SCRIPTS-->
+    <script type="text/javascript" th:src="@{../../js/three.min.js}"></script>
+    <script type="text/javascript" th:src="@{../../js/home.js}"></script>
+    <script type="module" th:src="@{../../js/components/carrousel-component.js}"></script>
+</head>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header layout:replace="fragments/template :: header"></header>
+    <main class="mdl-layout__content">
+        <div class="main-section">
+            <img style="height: 60%;" th:src="@{../../images/students-building.svg}">
+            <h3>Disculpas, este sitio está en construcción</h3>
+            <p>Pronto agregaremos estas y nuevas funcionalidades más. Por mientras, te invitamos a que visites nuestra página de inicio :)</p>
+            <a href="/">Ir a Inicio</a>
+        </div>
+    </main>
+    <footer layout:replace="fragments/template :: footer">
+    </footer>
+</div>
+
+</body>
+</html>

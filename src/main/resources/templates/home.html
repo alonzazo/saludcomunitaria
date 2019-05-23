@@ -7,11 +7,15 @@
     <th:block th:replace="fragments/template :: header-data('Inicio')"></th:block>
     <!--STYLES-->
     <link rel="stylesheet" type="text/css" th:href="@{../../css/home.css}">
+    <link rel="stylesheet" th:href="@{../../css/smart-elements/smart.default.css}" type="text/css" />
+
     <!--<link href="https://fonts.googleapis.com/css?family=PT+Sans|Fredoka+One|Noto+Sans+JP" rel="stylesheet"/>-->
     <!--SCRIPTS-->
     <script type="text/javascript" th:src="@{../../js/three.min.js}"></script>
     <script type="text/javascript" th:src="@{../../js/home.js}"></script>
     <script type="module" th:src="@{../../js/components/carrousel-component.js}"></script>
+    <script type="text/javascript" th:src="@{../../js/smart-elements/common.js}"></script>
+    <script type="text/javascript" th:src="@{../../js/smart-elements/smart.elements.js}"></script>
 </head>
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -25,20 +29,143 @@
                     <p th:text="${blogEntry.abstractEntry}"></p>
                 </image-carrousel-element>
             </carrousel-full-screen-section>
-            <div class="saludcomunitaria-wear-section">
+            <!--<div class="saludcomunitaria-wear-section">
                 <div class="saludcomunitaria-wear-band">
                     <div class="saludcomunitaria-wear-band-text">
-                        <div class="mdl-typography--display-2 mdl-typography--font-thin">Bahía Drake, colaboramos en su desarrollo</div>
-                        <p class="mdl-typography--headline mdl-typography--font-thin">
+                        <div class="mdl-typography&#45;&#45;display-2 mdl-typography&#45;&#45;font-thin">Bahía Drake, colaboramos en su desarrollo</div>
+                        <p class="mdl-typography&#45;&#45;headline mdl-typography&#45;&#45;font-thin">
                             Viajamos alrededor de 3 veces por año al distrito de Bahía Drake, un lugar paradisiaco con gran potencial turístico. Usamos la fuerza de la investigación para colaborarles en su desarrollo.
                         </p>
                     </div>
                 </div>
-            </div>
+            </div>-->
+            <section class="saludcomunitaria-info-section">
+                <!--Imagen tomada de Freepik.es del autor pikisuperstar-->
+                <div class="graphic-container">
+                    <img style="width: 100%; max-height: 60%;" th:src="@{../../images/triangulo-sostenibilidad.svg}">
+                </div>
+
+                <div class="info-container">
+                    <div>
+                        <p>A lo largo de los últimos sesenta años Costa Rica ha logrado construir, ampliar – y defender – uno de los sistemas de salud pública más exitosos y reconocidos del mundo, lo que le ha permitido, con niveles de ingreso por habitante que están todavía muy lejos de aquellos que caracterizan a los países más desarrollados, alcanzar niveles de salud que están entre los más altos del mundo. (Garnier, 2006)</p>
+                        <p>Salud comunitaria comprende el área de estudio de la salud desde un punto de vista integral, de determinantes sociales y epidemiológico. Considera al individuo en su totalidad (mente-cuerpo-espíritu) su entorno y características socioculturales.</p>
+                        <p>Nos preguntamos si basta con definir presupuestos, planes y programas, proveer servicios de salud, regular y lanzar algunas políticas para lograr el bien público y colectivo de la salud. ¿Quién en la teoría y la práctica realmente mira la salud, los resultados y objetivos de salud? ¿Quién y cuándo se contrapone a la relación entre los indicadores y los valores éticos centrales en los que se cree y se fundamenta la sociedad, y el sector salud? ¿Quién mira con suficiente atención la inconsecuencia en la asignación de recursos y la variabilidad del alcance e impacto de los diferentes acuerdos sociales y de salud? (Alcira Castillo Martínez, 2005)</p>
+                    </div>
+                    <h2>Salud comunitaria</h2>
+                </div>
+            </section>
+            <section class="events-section">
+                <h1>Eventos</h1>
+                <div class="events-content">
+                    <div class="calendar-container">
+                        <!--Para más información sobre cómo funciona el smart-calendar
+                        visite: https://www.htmlelements.com/-->
+                        <smart-calendar id="calendar"></smart-calendar>
+
+                    </div>
+                    <div class="events-container">
+                        <div class="events-header">
+                            <span>Fecha<br>Hora</span>
+                            <p>Descripción del evento</p>
+                        </div>
+                        <div class="event-items-container" id="event-items-container">
+                            <div class="event-item">
+                                <div class="date-time">
+                                    <span class="date">25-abr-2019</span>
+                                    <span class="time">3:00pm</span>
+                                </div>
+                                <p>Foro del agua</p>
+                            </div>
+                            <div class="event-item">
+                                <div class="date-time">
+                                    <span class="date">25-abr-2019</span>
+                                    <span class="time">3:00pm</span>
+                                </div>
+                                <p>Foro del agua</p>
+                            </div>
+                            <div class="event-item">
+                                <div class="date-time">
+                                    <span class="date">25-abr-2019</span>
+                                    <span class="time">3:00pm</span>
+                                </div>
+                                <p>Foro del agua</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="interesting-links-section">
+                <h1>Enlaces de interés</h1>
+                <div class="interesting-links-container">
+                    <a href="http://www.ucr.ac.cr/">
+                        <div class="link-item">
+                            <img th:src="@{../../images/enlaces-interes/ucr-.png}" alt="Enlace a UCR página oficial"/>
+                            Universidad de Costa Rica
+                        </div>
+                    </a>
+                    <a href="http://ori.ucr.ac.cr/">
+                        <div class="link-item">
+                            <img th:src="@{../../images/enlaces-interes/ori-peq.png}" alt="Enlace a Oficina de Registro e Información"/>
+                            Oficina de Registro e Información
+                        </div>
+                    </a>
+                    <a href="https://www.fce.ucr.ac.cr/">
+                        <div class="link-item">
+                            <img th:src="@{../../images/enlaces-interes/Logo-FCE-peq.png}" alt="Enlace a Facultad de Ciéncias Económicas"/>
+                            Faculta de Ciencias Económicas
+                        </div>
+                    </a>
+                    <a href="http://www.estadistica.ucr.ac.cr/index.php/es/uses">
+                        <div class="link-item">
+                            <img th:src="@{../../images/enlaces-interes/eest.png}" alt="Enlace a Unidad de Servicios Estadísticos"/>
+                            Unidad de Servicios Estadísticos
+                        </div>
+                    </a>
+                    <a href="http://www.estadistica.ucr.ac.cr/">
+                        <div class="link-item">
+                            <img th:src="@{../../images/enlaces-interes/EES-escuela-estadistica-horizontal---copia-ConvertImage.png}" alt="Enlace a Escuela de Estadística UCR"/>
+                            Escuela de Estadística
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section class="interesting-documents-section">
+                <h1>Documentos de interés</h1>
+                <div class="document-items-container">
+                    <a href="http://www.cu.ucr.ac.cr/uploads/tx_ucruniversitycouncildatabases/officialgazette/2019/a06-2019.pdf">
+                        <div class="document-item">
+                            Normas y Procedimientos de Matrícula I-2019
+                        </div>
+                    </a>
+                    <a href="http://www.cu.ucr.ac.cr/uploads/tx_ucruniversitycouncildatabases/normative/trabajo_comunal.pdf">
+                        <div class="document-item">
+                            Reglamento del Trabajo Comunal Universitario
+                        </div>
+                    </a>
+                    <a href="https://accionsocial.ucr.ac.cr/sites/default/files/documentos/circular_vas-10-2016.pdf">
+                        <div class="document-item">
+                            Ciruclar VAS-10-2016
+                        </div>
+                    </a>
+                    <a href="https://accionsocial.ucr.ac.cr/sites/default/files/documentos/circular_tcu_para_universidades_privadas_y_o_colegios_profesionales.pdf">
+                        <div class="document-item">
+                            Circular TCU para universidades privadas y/o colegios profesionales
+                        </div>
+                    </a>
+                    <a href="https://accionsocial.ucr.ac.cr/sites/default/files/documentos/circular_vas-36-2016.pdf">
+                        <div class="document-item">
+                            Circular VAS-36-2016
+                        </div>
+                    </a>
+                </div>
+            </section>
         </main>
         <footer layout:replace="fragments/template :: footer">
         </footer>
     </div>
-
+<!--
+40804000
+113980957
+3100684-->
 </body>
 </html>

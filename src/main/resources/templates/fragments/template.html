@@ -26,7 +26,11 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
             <div id="nav-logo">
                 <a style="display: flex; flex-direction: column; justify-content: center;" href="http://www.ucr.ac.cr/">
-                    <img style="max-height: 90px;" th:src="@{../../images/firma-horizontal-dos-lineas-reverso-rgb.png}" alt=""/></a>
+                    <img style="max-height: 90px;" th:src="@{../../images/firma-horizontal-dos-lineas-reverso-rgb.png}" alt=""/>
+                </a>
+                <a style="display: flex; flex-direction: column; justify-content: center; " href="http://www.estadistica.ucr.ac.cr/">
+                    <img style="max-height: 70px;height: max-content;border-left-color: #c5c5c5; border-left-width: 1px; border-left-style: solid; margin-left: 10px; padding-left: 10px; padding-top: 2px;" th:src="@{../../images/EES-escuela-estadistica-horizontal-01.png}" alt=""/>
+                </a>
                 <a style="display: flex; flex-direction: column; justify-content: center; " href="/">
                     <img style="max-height: 70px;height: max-content;border-left-color: #c5c5c5; border-left-width: 1px; border-left-style: solid; margin-left: 10px; padding-left: 10px;" alt="Logo Centro de Datos Drake" th:src="@{../../images/logotipo-mandarina-dark.svg}"/>
                 </a>
@@ -84,16 +88,22 @@
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
             <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'inicio')} ? is-active"
                href="/inicio" class="mdl-layout__tab" >Inicio</a>
-            <!--<a href="#info" class="mdl-layout__tab">Información</a>
-            <a href="#areasconocimiento" class="mdl-layout__tab">Áreas de conocimiento</a>-->
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'quienes-somos')} ? is-active"
+               href="/quienes-somos" class="mdl-layout__tab">Quiénes somos</a>
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'investigacion')} ? is-active"
+               href="/investigacion" class="mdl-layout__tab">Investigación</a>
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'accion-social')} ? is-active"
+               href="/accion-social" class="mdl-layout__tab">Acción Social</a>
             <!--<a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'datos')} ? is-active" href="/datos" class="mdl-layout__tab">Datos</a>-->
             <a sec:authorize="isAuthenticated()" href="#proyectos" class="mdl-layout__tab">Proyectos</a>
-            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'blogs')} ? is-active" href="/blogs" class="mdl-layout__tab">Blogs</a>
-            <!--<a href="#contacto" class="mdl-layout__tab">Contacto</a>-->
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'blogs')} ? is-active"
+               href="/blogs" class="mdl-layout__tab">Blogs</a>
+            <a th:classappend="${#strings.contains(T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest().toUriString(),'contactanos')} ? is-active"
+               href="/contactanos" class="mdl-layout__tab">Contacto</a>
             <!--Reducir categorías-->
         </div>
     </section>
-    <main class="mdl-layout__content" th:style="'background: url('+@{../../images/backgrounds/diego38.jpeg}+');background-size:cover;'">
+    <main class="mdl-layout__content" th:style="'background: url(' + @{../../images/backgrounds/diego38.jpeg} + ');background-size:cover;'">
     </main>
 
     <footer class="mdl-mega-footer" layout:fragment="footer">
@@ -102,11 +112,11 @@
                 <h1 class="mdl-mega-footer--heading">Navegación</h1>
                 <ul class="mdl-mega-footer__link-list">
                     <li><a href="/">Inicio</a></li>
-                    <!--<li><a href="#">Áreas de conocimiento</a></li>-->
-                    <!--<li><a href="#">Datos</a></li>-->
-                    <!--<li><a href="#">Proyectos</a></li>-->
-                    <li><a href="#">Blogs</a></li>
-                    <!--<li><a href="#">Contacto</a></li>-->
+                    <li><a href="/quienes-somos">Quiénes somos</a></li>
+                    <li><a href="/investigacion">Investigación</a></li>
+                    <li><a href="/accion-social">Acción social</a></li>
+                    <li><a href="/blogs">Blogs</a></li>
+                    <li><a href="/contactanos">Contacto</a></li>
                 </ul>
             </div>
             <div class="mdl-mega-footer--drop-down-section">
