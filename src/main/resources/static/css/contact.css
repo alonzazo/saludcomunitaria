@@ -1,0 +1,19 @@
+.contact-section{
+    display: flex;
+    align-items: stretch;
+    height: 80vh;
+}
+
+.left{
+    flex-grow: 1;
+    background-image: url("../../images/backgrounds/vida.JPG");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.right{
+    flex-grow: 1;
+    padding-top: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
+}

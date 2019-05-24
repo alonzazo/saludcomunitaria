@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <th:block th:replace="fragments/template :: header-data('Inicio')"></th:block>
+    <!--STYLES-->
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/contact.css}">
+    <!--<link href="https://fonts.googleapis.com/css?family=PT+Sans|Fredoka+One|Noto+Sans+JP" rel="stylesheet"/>-->
+    <!--SCRIPTS-->
+    <script type="text/javascript" th:src="@{../../js/three.min.js}"></script>
+    <script type="text/javascript" th:src="@{../../js/home.js}"></script>
+    <script type="module" th:src="@{../../js/components/carrousel-component.js}"></script>
 </head>
-<body>
-$END$
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header layout:replace="fragments/template :: header"></header>
+    <main class="mdl-layout__content">
+        <div class="contact-section">
+            <div class="left">
+
+            </div>
+            <div class="right">
+                <h1> Contactanos </h1>
+                <div class="contact-content">
+                    <p> <b>Ubicación:</b> Facultad de Ciencias Económicas, Escuela de Estadística, tercer piso </p>
+                    <p> <b>Correo electrónico:</b> tcu.drake@gmail.com milena.castromora@ucr.ac.cr </p>
+                    <p> <b>Teléfono:</b> 25116500 </p>
+                </div>
+                <div class="social-networks">
+                    Seguínos en redes sociales <br/>
+                    <a href="https://www.facebook.com/BahiaDrakeTCU/"> <img style="max-width: 40px" th:src="@{../../images/facebook.svg}" alt="Facebook"/> </a>
+                    <a href="https://www.instagram.com/bahiadrake_tcu/"> <img style="max-width: 40px;" th:src="@{../../images/instagram.svg}" alt=""/> </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer layout:replace="fragments/template :: footer">
+    </footer>
+</div>
+
 </body>
 </html>
