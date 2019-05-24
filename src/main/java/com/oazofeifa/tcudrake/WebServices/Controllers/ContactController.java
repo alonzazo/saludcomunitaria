@@ -10,8 +10,7 @@ public class ContactController {
     @RequestMapping(value = "/contactanos")
     public ModelAndView getContactPage(ModelAndView mv){
 
-        //TODO Implementar la sección de contactenos
-        mv.setViewName("in-construction");
+        mv.setViewName("contact");
 
         return mv;
     }
