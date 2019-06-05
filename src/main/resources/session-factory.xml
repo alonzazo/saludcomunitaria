@@ -7,6 +7,8 @@
     <property name="connection.url">jdbc:mysql://saludcomunitariacr.ml:3306/drake</property>
     <!--<property name="connection.url">jdbc:mysql://localhost:3306/drake</property>-->
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!-- DB schema will be updated if needed -->
+    <!--<property name="hbm2ddl.auto">update</property>-->
 
     <mapping class="com.oazofeifa.tcudrake.Persistence.Entities.BlogEntry"/>
     <mapping class="com.oazofeifa.tcudrake.Persistence.Entities.Roles"/>
@@ -14,7 +16,6 @@
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
-    <!-- DB schema will be updated if needed -->
-    <!-- <property name="hbm2ddl.auto">update</property> -->
+
   </session-factory>
 </hibernate-configuration>

@@ -16,6 +16,7 @@ import org.springframework.security.crypto.keygen.KeyGenerators;
 import org.springframework.security.crypto.keygen.StringKeyGenerator;
 
 import javax.persistence.EntityManagerFactory;
+import java.io.PrintWriter;
 
 @Configuration
 @EnableWebSecurity
@@ -84,13 +85,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling()
                 .accessDeniedPage("/403");
 
-        /*User userNew = new User();
-        userNew.setEmail("oscar.azofeifa.segura@gmail.com");
-        userNew.setPassword("Segura");
-        userNew.setName("Oscar");
-        userNew.setLastname("Azofeifa");
-        userNew.setRoleFk(1);
-        userService.create(userNew);*/
+        /*createANewUser("Oscar", "Azofeifa", "oscar.azofeifa.segura@gmail.com", "Segura", 1);*/
+
+        printWorkingDirectory();
 
     }
     @Override
@@ -98,4 +95,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
+    private void createANewUser(String name, String lastName, String email, String password, Integer role){
+        User userNew = new User();
+        userNew.setEmail(email);
+        userNew.setPassword(password);
+        userNew.setName(name);
+        userNew.setLastname(lastName);
+        userNew.setRoleFk(role);
+        userService.create(userNew);
+    }
+
+    private void printWorkingDirectory(){
+
+        try {
+            PrintWriter printWriter;
+            printWriter= new PrintWriter("pwd.txt");
+            printWriter.write("Working Directory = " +
+                    System.getProperty("user.dir"));
+            printWriter.close();
+
+        }catch (Exception e){ }
+
+    }
 }

@@ -18,8 +18,11 @@ import java.util.List;
 
 @Controller
 public class BlogController {
+    /*Local path*/
+    //private String uploadPath = "src/main/resources/static/images/covers/";
+    /*Production path*/
+    private String uploadPath = "../webapps/ROOT/WEB-INF/classes/static/images/covers/";
 
-    private String uploadPath = "src/main/resources/static/images/covers/";
     private String imagesUrl = "images/covers/";
 
     @Autowired
