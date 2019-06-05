@@ -22,7 +22,7 @@
                     <h2>Nueva entrada de blog</h2>
                 </div>
                 <!-- Floating Multiline Textfield -->
-                <form th:action="@{/blogs/publicar-entrada}" method="post" style="margin: 40px auto; max-width: 512px; width: inherit;">
+                <form th:action="@{/blogs/publicar-entrada}" method="post" enctype="multipart/form-data" style="margin: 40px auto; max-width: 512px; width: inherit;">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: auto; display: block;">
                         <input class="mdl-textfield__input" type="text" id="title-entry" name="title-entry">
                         <label class="mdl-textfield__label" for="title-entry">Título de la entrada</label>
@@ -40,6 +40,10 @@
                         <input type="checkbox" id="show-in-news" name="show-in-news" class="mdl-checkbox__input" checked>
                         <span class="mdl-checkbox__label">Deseo que se muestre en la sección de Noticias</span>
                     </label>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: auto; display: block;">
+                        <input class="mdl-textfield__input" type="file" id="image-entry" name="image-entry">
+                        <label class="mdl-textfield__label" for="image-entry">Seleccionar portada...</label>
+                    </div>
                     <div style="text-align: right; margin-top: 25px;">
                         <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                             Publicar

@@ -8,14 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.jws.WebParam;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
 
 @Controller
 public class BlogController {
+
+    private String uploadPath = "src/main/resources/static/images/covers/";
+    private String imagesUrl = "images/covers/";
 
     @Autowired
     private BlogEntriesService blogEntriesService;
@@ -38,7 +43,7 @@ public class BlogController {
         BlogEntry blogEntry = blogEntriesService.findById(Integer.valueOf(blogId));
         //Si no está volvemos a la vista de selección de blogs
         if (blogEntry == null)
-            mv.setViewName("redirect:blog");
+            mv.setViewName("redirect:/blogs");
 
         //Buscamos el nombre del autor, no el email
         User author = userService.findById(blogEntry.getUseremailFk());
@@ -58,11 +63,11 @@ public class BlogController {
     }
 
     @RequestMapping(value = "/blogs/publicar-entrada", method = RequestMethod.POST)
-    public @ResponseBody String postNewEntry(@RequestParam(value = "title-entry", required = true) String titleEntry,
+    public String postNewEntry(@RequestParam(value = "title-entry", required = true) String titleEntry,
                                              @RequestParam(value = "abstract-entry", required = true) String abstractEntry,
                                              @RequestParam(value = "content-entry", required = true) String contentEntry,
                                              @RequestParam(value = "show-in-news", required = false) Boolean showInNews,
-                                             @RequestParam(value = "image-entry", required = false) String imageEntry){
+                                             @RequestParam(value = "image-entry", required = false) MultipartFile imageEntry){
         //Creamos el objeto para insertar
         BlogEntry blogEntry = new BlogEntry();
         blogEntry.setTitleEntry(titleEntry);
@@ -76,11 +81,19 @@ public class BlogController {
         //Casteamos un Boolean a un byte array
         byte[] news = new byte[1];
         if (showInNews == null) showInNews = false;
-        news[0] = showInNews ? (byte)1: (byte)0;
+        news = showInNews ? "1".getBytes(): "0".getBytes();
         blogEntry.setNews(news);
 
         //Colocamos la imagen default
         if (imageEntry == null) blogEntry.setImageUrl("images/backgrounds/default-blog-image.jpg");
+        else {
+            try {
+                grabarArchivoALocal(imageEntry);
+                blogEntry.setImageUrl(imagesUrl + imageEntry.getOriginalFilename());
+            }catch (Exception e){
+                blogEntry.setImageUrl("images/backgrounds/default-blog-image.jpg");
+            }
+        }
 
         try {
             blogEntriesService.save(blogEntry);
@@ -88,7 +101,27 @@ public class BlogController {
             ex.printStackTrace();
             return "failed";
         }
-        return "success";
+        return "redirect:/blogs";
+    }
+
+    private void grabarArchivoALocal(MultipartFile archivo) throws Exception {
+        File localFile = new File(uploadPath + archivo.getOriginalFilename());
+        localFile.createNewFile();
+        FileOutputStream os = null;
+
+        try {
+            os = new FileOutputStream(localFile);
+            os.write(archivo.getBytes());
+
+        } finally {
+            if (os != null) {
+                try {
+                    os.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 }
